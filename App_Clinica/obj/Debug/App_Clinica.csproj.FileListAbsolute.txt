@@ -1,0 +1,16 @@
+C:\Dev\App-Jessica\App_Clinica\bin\Debug\App_Clinica.exe.config
+C:\Dev\App-Jessica\App_Clinica\bin\Debug\App_Clinica.exe
+C:\Dev\App-Jessica\App_Clinica\bin\Debug\App_Clinica.pdb
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.csproj.AssemblyReference.cache
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.csproj.SuggestedBindingRedirects.cache
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\MainWindow.g.cs
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App.g.cs
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica_MarkupCompile.cache
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica_MarkupCompile.lref
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\MainWindow.baml
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.g.resources
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.Properties.Resources.resources
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.csproj.GenerateResource.cache
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.csproj.CoreCompileInputs.cache
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.exe
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.pdb
