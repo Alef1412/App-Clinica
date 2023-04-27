@@ -14,3 +14,5 @@ C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.csproj.GenerateResource.cac
 C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.csproj.CoreCompileInputs.cache
 C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.exe
 C:\Dev\App-Jessica\App_Clinica\obj\Debug\App_Clinica.pdb
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\Views\Login.g.cs
+C:\Dev\App-Jessica\App_Clinica\obj\Debug\Views\Login.baml
