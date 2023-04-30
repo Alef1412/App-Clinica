@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Dev\App-Jessica\App_Clinica\App.xaml
-21019421676
+31432903604
 
-101390415951
+15-1730170795
 13-38814620
-MainWindow.xaml;Views\Login.xaml;
+CustomControls\BindablePasswordBox.xaml;MainWindow.xaml;Views\Login.xaml;
 
-False
+True
 
