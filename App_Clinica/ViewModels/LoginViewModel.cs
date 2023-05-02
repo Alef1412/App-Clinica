@@ -1,8 +1,11 @@
-﻿using System;
+﻿using App_Clinica.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security;
+using System.Security.Principal;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -14,6 +17,8 @@ namespace App_Clinica.ViewModels
         private SecureString _password;
         private string _errorMessage;
         private bool _isViewVisible;
+
+        private UserRepository userRepository;
 
         // Variaveis de Classe
         public string UserName { get => _userName; set { _userName = value; OnPropertyChanged(nameof(UserName)); } }
@@ -30,6 +35,8 @@ namespace App_Clinica.ViewModels
 
         public LoginViewModel()
         {
+            userRepository = new UserRepository();
+
             LoginCommand = new ViewModelCommand(ExecuteLoginCommand, CanExecuteLoginCommand);
 
             RecoverPasswordCommand = new ViewModelCommand(ExecuteRecoverPassCommand);
@@ -54,7 +61,19 @@ namespace App_Clinica.ViewModels
 
         private void ExecuteLoginCommand(object obj)
         {
-            throw new NotImplementedException();
+            var isValidUser = userRepository.AuthenticateUser(new System.Net.NetworkCredential(UserName, Password));
+
+            if (isValidUser)
+            {
+                Thread.CurrentPrincipal = new GenericPrincipal(new GenericIdentity(UserName),null);
+
+                IsViewVisible = false;
+            }
+            else
+            {
+                IsViewVisible = true;
+                ErrorMessage = "Usuário ou Senha Inválida";
+            }
         }
     }
 }

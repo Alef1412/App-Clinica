@@ -20,6 +20,7 @@ namespace App_Clinica.Repositories
 
         public bool AuthenticateUser(NetworkCredential credential)
         {
+            bool result = false;
                         
             try
             {
@@ -27,11 +28,11 @@ namespace App_Clinica.Repositories
                 using (var command = new SqlCommand()) {
                 command.Connection = connection;
                     connection.Open();
-                    command.CommandText = "select * from Usuario where Username = '@username' and [Password]= '@password'";
-                    command.Parameters.Add("@username", SqlDbType.NVarChar).Value = credential.UserName;
-                    command.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
+                    command.CommandText = $@"select * from Usuario where Username = '{credential.UserName}' and [Password]= '{credential.Password}'";
+                    //command.Parameters.Add("@username", SqlDbType.NVarChar).Value = credential.UserName;
+                    //command.Parameters.Add("@password", SqlDbType.NVarChar).Value = credential.Password;
 
-                    return command.ExecuteScalar() == null ? false : true;
+                    result = command.ExecuteScalar() == null ? false : true;
                     
                 }
             }
@@ -41,6 +42,8 @@ namespace App_Clinica.Repositories
                 MessageBox.Show($"Ocorreu um erro {ex}");
                 return false;
             }
+
+            return result;
         }
 
         public void Edit(UserModel userModel)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App_Clinica.Views;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,5 +14,20 @@ namespace App_Clinica
     /// </summary>
     public partial class App : Application
     {
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            var loginView = new Login();
+            loginView.Show();
+
+            loginView.IsVisibleChanged += (s, ev) =>
+            {
+                if (loginView.IsVisible == false && loginView.IsLoaded)
+                {
+                    var mainWindow = new MainWindow();
+                    mainWindow.Show();
+                    loginView.Close();
+                }
+            };
+        }
     }
 }

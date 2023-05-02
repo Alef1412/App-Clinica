@@ -19,9 +19,18 @@
     <Window.DataContext>
         <viewModels:LoginViewModel/>
     </Window.DataContext>
-    
-    
 
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="booleanConvert"/>
+    </Window.Resources>
+
+    <Window.Visibility>
+        <Binding Path="IsViewVisible"
+                 Mode="TwoWay"
+                 Converter="{StaticResource booleanConvert}"/>
+    </Window.Visibility>
+
+    
         <Border CornerRadius="12">
         <Border.Background>
             <ImageBrush ImageSource="/Imagens/Renovar_-_Logo_squared.png" Stretch="Fill"/>
@@ -179,7 +188,15 @@
                                Margin="0,35,0,0"
                                />
 
-                    <customControls:BindablePasswordBox Password="{Binding Password, UpdateSourceTrigger=PropertyChanged}"></customControls:BindablePasswordBox>
+                    <customControls:BindablePasswordBox Password="{Binding Password, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+
+                    <TextBlock Text="{Binding ErrorMessage}" 
+                               Foreground="red" 
+                               FontSize="12" 
+                               FontWeight="Medium" 
+                               FontFamily="Montserrat" 
+                               HorizontalAlignment="Left"
+                               />
 
                     <Button x:Name="btnLogin"
                             BorderThickness="0"
@@ -189,7 +206,7 @@
                             FontFamily="Montserrat"
                             Cursor="Hand"
                             Margin="0,50,0,0"
-                            Click="btnLogin_Click">
+                            Command="{Binding LoginCommand}">
 
                         <Button.Style>
                             <Style TargetType="Button">

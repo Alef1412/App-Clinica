@@ -40,9 +40,6 @@ namespace App_Clinica.Views
             Application.Current.Shutdown();
         }
 
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show($"Usuário: {txtUser.Text} Senha: {txtPassword.Password}");
-        }
+        
     }
 }
